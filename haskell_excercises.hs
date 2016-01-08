@@ -20,7 +20,7 @@ afterFilter _ [] = []
 afterFilter _ [_] = []
 afterFilter f (x:y:xs)
   | f x = y : afterFilter f xs
-  | otherwise = x : afterFilter f (y:xs)
+  | otherwise = afterFilter f (y:xs)
 
 -- 2015 Autumn
 revCount :: [a] -> [Int] -> [a]
